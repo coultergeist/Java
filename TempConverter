@@ -1,0 +1,26 @@
+//*******************************
+//Name: Danielle Coulter
+//Title: TempConverter.java
+//Author: Assignment from Professor Oskooyee
+//Description: Computes the Fahrenheit equivalent of a specific Celsius value
+//Date: 10/15/2016
+//*******************************
+
+public class TempConverter {
+	public static void main(String[] args){
+		
+		//constants
+		final int BASE = 32;
+		final double CONVERSION_FACTOR = 9.0/5.0;
+		
+		double fahrenheitTemp; 
+		int celsiusTemp = 24;//value to be converted
+		
+		fahrenheitTemp = celsiusTemp * CONVERSION_FACTOR + BASE;
+		
+		System.out.println("Celsius Temperature: " + celsiusTemp);
+		System.out.println("Fahrenheit Temperature: " + fahrenheitTemp);
+		
+	}
+	
+}
