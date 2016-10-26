@@ -1,0 +1,54 @@
+/*Examples from the Math class:
+ * min, max
+ * absolute value
+ * sqrt, cbrt
+ * numbers raised to power
+ * random
+ * Math.PI
+
+*/
+
+import java.util.Scanner;
+
+public class MathEx {
+	public static void main (String[] args){
+		Scanner in = new Scanner(System.in);
+		
+		//read two numbers from the user
+		int num1, num2;
+		System.out.println("Enter two numbers: ");
+		num1 = in.nextInt();
+		num2 = in.nextInt();
+		
+		//Math.max (a, b) to get larger of two numbers
+		//Math.min (a, b) to get smaller
+		System.out.println("\nThe larger value is: " + Math.max(num1, num2));
+		int min = Math.min(num1, num2);
+		System.out.println("\nThe smaller value is: " + Math.min(num1, num2));
+
+		//Math.abs(num) to get the absolute value of a number
+		System.out.println("\nThe absolute value of num1: " + Math.abs(num1));
+		System.out.println("\nThe absolute value of num2: " + Math.abs(num2));
+
+		//Math.sqrt(num) to get the square root  of a number
+		//Math.cbrt(num) to get the cube root of a number
+		System.out.println("\nThe square root of num2: " + Math.sqrt(num1));
+		System.out.println("\nThe cube root of num2: " + Math.cbrt(num2));
+
+		//Math.pow (num, exp) to get num^ (exp)
+		//System.out.println("\n2^5: " + Math.pow(2, -1));
+		System.out.println("\n4^1/2: " + Math.pow(4, 1.0/2.0)); 
+		
+		//Math.random() to get random numbers in range [0.0, 1.0)
+		//to get random in between [a, b] use: (int) (Math.random() * (b-a+1) +a)
+		System.out.println("\nrandom1: " + Math.random()*(num2+1)); //[0.0, num1)
+		System.out.println("\nrandom2: " + Math.random()*num2 + num1); // [num1, num2+num1
+		System.out.println("\nrandom3: " + (int) (Math.random()*(num2-num1)+num1)); // [num1, num2) for whole numbers in the range
+
+		// Math.PI
+		System.out.println("\nPI = " + Math.PI); //can be used for area of circle
+		
+		
+	}
+	
+}
