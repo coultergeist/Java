@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class StringExm {
+	public static void main (String[] args){
+		Scanner in = new Scanner(System.in);
+		
+		//declare String variables
+		String fname, lname;
+		
+		//read in a String with next and nextLine
+		System.out.print("Enter your first name: ");
+		
+		//fname = in.next();
+		fname = in.next();
+		
+		System.out.println("Enter your last name: ");
+		in.nextLine();
+		lname = in.nextLine();		
+
+		System.out.println("\nfname = " + fname);
+		System.out.println("\nlname = " + lname);
+		
+		//charAt method
+		//"Alex" 
+		System.out.println("charAt(1) = " + fname.charAt(1));
+		char myChar = lname.charAt(0);
+		System.out.println("myChar = " + myChar);
+		
+		//Use length to get the length of a String
+		System.out.println("fname.length()" +fname.length());
+		System.out.println("lname.length()" +lname.length());
+		System.out.println("last char in lname = " + lname.charAt(lname.length()-1));
+
+		//substring methods
+		//#1 of 2: substring (startIndex, endIndex)
+		System.out.println("\nsubstring(1. 3) = " + fname.substring(1, 3));
+		String mySub = lname.substring(2,5);
+		System.out.println("mySub = " + mySub);
+		
+		//#2 of 2
+		//substring(startIndex)
+		System.out.println("\nsubstring(1. 3) = " + fname.substring(1));
+		
+		//toUpperCase and toLowerCase
+		System.out.println(fname.toUpperCase());
+		System.out.println(lname.toLowerCase());
+	}
+}
