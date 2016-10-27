@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class IfElseStatement {
+// this is a guessing game with the user
+	
+	public static void main (String[] args){
+		
+		final int MAX = 10;
+		int answer, guess;
+		
+		Random generator = new Random(); //predefined class part of utility package
+		// "new" = instantating a Random object
+		answer = generator.nextInt(MAX) + 1; //excludes Max, 0-9
+		
+		System.out.println("I'm thinking of a number between 1 and " + MAX + ". Guess what it is: ");
+		
+		Scanner in = new Scanner(System.in);
+		guess = in.nextInt();
+		
+		if (guess == answer)
+			
+			System.out.println("Yout got it! Good guessing!");
+		
+		else{
+			System.out.println("That's not correct, sorry.");
+			System.out.println("The number was " + answer);
+		}
+	}
+		
+}
