@@ -1,0 +1,10 @@
+public class PrintDesign {
+     public static void main (String[] args) {
+    	
+    	//Display results 
+     	System.out.println("    *");
+    	System.out.println("  * * *");
+    	System.out.println("* * * * *");
+    	
+     }//end main method
+}//end class	
