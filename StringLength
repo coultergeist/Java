@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Lab3 {
+
+	public static void main (String[] args){
+
+		Scanner scan = new Scanner (System.in);
+		
+		//read in a String with nextLine
+		System.out.println("Please enter two strings: ");
+		String s1 = scan.nextLine();
+		String s2 = scan.nextLine();
+		
+		//Compare and display results of the string comparison
+		if (s1.equals(s2)) {
+		System.out.println("The strings are the same.");	
+		}
+		else {
+		System.out.println("The strings are not the same.");			
+		}
+	
+//String Length Comparison
+
+		if (s1.length() > s2.length())
+			System.out.println(""\nThe length of (s1.length)" is longer than "(s2.length());
+		
+		//System.out.println("fname.length()" +fname.length());
+  }
+}
