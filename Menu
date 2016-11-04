@@ -1,0 +1,79 @@
+//*******************************
+//Name: Danielle Coulter
+//Title: Assignment2.java
+//Author: Assignment from Professor Oskooyee
+//Description: Declare variables, use Arithmetic Expressions, Scanner class, and selection Statements to find maximum values
+//Date: 10/27/2016
+//*******************************
+
+//import java class(es)
+import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Scanner;
+
+public class Menu{
+	
+	public static void main(String[] args){
+
+		Scanner input=new Scanner(System.in);
+
+		//declare integers variables
+		int hamburger, cheese, french, drinks, itemsTotal;
+		
+		//Display In-N-Out menu for user
+		System.out.println("Welcome In-N-Out Burger Menu");
+		System.out.println("----------------------------");
+		System.out.println("Hamburger:\t\t$2.75");
+		System.out.println("Cheeseburger:\t\t$3.25");
+		System.out.println("French Fries:\t\t$2.50");
+		System.out.println("Shake & Beverage:\t$1.50");
+		
+		//using in.nextLine so that user "spaces" are saved
+		//first: prompt user for what they want to purchase
+		System.out.println("\nHow many hamburger(s) would like to buy?");
+		//second: read the number, repeat for each menu item
+		hamburger = input.nextInt();
+		System.out.println("\nHow many cheeseburger(s) would like to buy?");
+		cheese = input.nextInt();
+		System.out.println("\nHow many French fries would like to buy?");
+		french = input.nextInt();
+		System.out.println("\nHow many drinks would like to buy?");
+		drinks = input.nextInt();
+		
+		//Call the numberformat:
+      NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		
+      //begin arithmetic and display costs of each
+      final double HAMBURGER_PRICE = hamburger*2.75;
+      System.out.println("The total cost for the hamburger(s) is: "+fmt.format(HAMBURGER_PRICE));
+      
+		final double CHEESE_PRICE = cheese*3.25;
+      System.out.println("The total cost for the cheeseburger(s) is: "+fmt.format(CHEESE_PRICE));
+		
+		final double FRENCH_PRICE = french*2.50;
+      System.out.println("The total cost for the French fries is: "+fmt.format(FRENCH_PRICE));
+      
+		final double DRINKS_PRICE = drinks*1.50;
+		System.out.println("The total cost for the drink(s) is: "+fmt.format(DRINKS_PRICE));
+		
+		//Find the highest costing item in the order 
+		String highestTotalCostItem = "Hamburger";
+			if(CHEESE_PRICE > HAMBURGER_PRICE)
+		highestTotalCostItem = "Cheeseburger";
+			if(FRENCH_PRICE > CHEESE_PRICE)
+		highestTotalCostItem = "French Fries";
+			if(DRINKS_PRICE > FRENCH_PRICE)
+		highestTotalCostItem = "Shake & Beverages";
+		System.out.println("\nThe most expensive item(s) in your order: " + highestTotalCostItem);
+
+		//begin arithmetic for total cost for all items
+		double TOTAL_COST=HAMBURGER_PRICE + CHEESE_PRICE + FRENCH_PRICE + DRINKS_PRICE;
+		System.out.println("Total cost for your order: "+ fmt.format(TOTAL_COST));
+		
+		//Show total items in the order
+		itemsTotal = hamburger + cheese + french + drinks;
+		System.out.println("The total number of item(s) you ordered: " + itemsTotal);
+							
+	}//end of method
+	
+}//end of class
