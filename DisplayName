@@ -1,0 +1,21 @@
+//Import Java class: Scanner
+import java.util.Scanner;
+
+public class Assignment2 {
+	public static void main (String[] args){
+		Scanner in = new Scanner(System.in);
+		
+		//declare String variable(s)
+		String full_name;
+		
+		//ask for user input
+		System.out.print("Please enter your full name: ");
+		//using in.nextLine so that user "spaces" are saved
+		full_name = in.nextLine();	
+		
+		//Display output here
+		System.out.println("Your full name is: " + "\"" + full_name + "\"");
+		
+	}//end of method
+	
+}//end of class
