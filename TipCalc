@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.text.NumberFormat; //allows us to use get CurrencyInstance and PercentInstance
+
+public class TipCalc {
+	public static void main(String[] args){
+		
+		//Declaring Variables
+		int bill, tip;
+		double tipAmount, total, tipPercent;
+		
+		//Getting the Input
+		Scanner scan = new Scanner(System.in);
+		NumberFormat fmt1 = NumberFormat.getCurrencyInstance();
+		NumberFormat fmt2 = NumberFormat.getPercentInstance();
+		System.out.println("Enter the bill amount: " );
+		bill = scan.nextInt();
+		System.out.println("What percent would you like to tip? " + fmt2);
+		tipAmount = scan.nextDouble();
+				
+		//Perform Calculations
+		total = bill + tipAmount;
+		
+		//Display Results
+		System.out.println("Tip Amount: " + fmt1.format(tipAmount));
+		System.out.println("Total amount including tip: " + fmt1.format(total));
+		
+	}//end of method
+}//end of class
