@@ -1,0 +1,63 @@
+/*This program demonstrates the While loop, reading a sentinal terminated list from the user
+ * accumulator sum values
+ * average of values
+ * Find and display the average of a list of salaries entered by the user.
+ * The list will be terminated by -1
+ * Make sure no error occurs if the list contains no salaries, that is if the user entered -1
+ */
+
+//import java utiltiy scanner
+import java.util.Scanner;
+
+//begin class
+public class SentinelExample {
+	
+  //begin main method
+	public static void main(String[] args){
+		
+		//Declare Scanner
+		Scanner in = new Scanner (System.in);
+		
+		//First, find average by getting sum and the count of how many numbers are entered
+		//Declare variable
+		double sum = 0;
+		int count = 0;
+		
+		//Declare variables for user input
+		double salary;
+		
+		//Display prompt to user
+		System.out.println("Enter the salaries or -1 to quit");
+		
+		//Initialize loop control variable
+		salary = in.nextDouble();
+		
+		while (salary != -1){
+			//add the salary to the sum
+			sum += salary; //sum = sum + salary
+			
+			//increase the count
+			count++; //count += 1 (or) count = count + 1
+			
+			//get the next input from user
+			salary = in.nextDouble(); //will repeat loop until the user quits
+			
+		}//end while loop
+		
+		//Sum and count for testing purposes only
+		//System.out.println("The sum is: " + sum);
+		//System.out.println("The count is: " + count);
+		
+		//Calculate the average and display results (only if user enters a salary)
+		if (count > 0){
+			double average = sum / count;
+		System.out.println("\nThe average salary is: " + average);
+		}
+		else{
+			System.out.println("Warning: No data entered.");
+		}//end if statement
+		
+			
+	}//end main
+	
+}//end the SentinelExample class
