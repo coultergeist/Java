@@ -1,0 +1,109 @@
+
+//import java scanner
+import java.util.Scanner; 
+
+//begin class
+public class GCD {
+	 
+	public static void main (String []args){
+		
+		//Intro message
+		System.out.println("The program will find the GCD of 2 positive integers");
+		
+		//Declare scanner
+		Scanner scan = new Scanner(System.in);
+		
+		//Define variable for the y (or) Y later when asked if they want to continue
+		String again; //outside the Do While loop
+		
+		//Create loop to ask if the user wants to run the program again
+		do{
+			
+			
+			//Read input of first entry
+			System.out.println("\nEnter the first positive integer: ");
+			int num1 = scan.nextInt(); //declare variable
+			
+			//Provide clarity after an error message using Boolean
+			boolean valid = true;
+			
+			//Use While loops for verification. Verify the first integer is positive. Continue loop until verified.
+			while (num1 <= 0){
+				System.out.println("The number must be positive. Please re-enter: ");
+				num1 = scan.nextInt(); //declare variable
+				valid = false;
+			}//end first while loop once verified
+			
+			//Blank line printed after error message.
+			if (!valid)
+				System.out.println();
+			
+			//Read input of second entry
+			System.out.println("Enter the second positive integer: ");
+			int num2 = scan.nextInt(); //declare variable 
+			
+			//Verify the second integer is positive and declare variable. Continue loop until verified.
+			while (num2 <= 0){
+				System.out.println("The number must be positive. Please re-enter: ");
+				num2 = scan.nextInt();
+			}//end second while loop once verified
+			
+			//Test output. To be removed.
+			//System.out.println("\nnum1 = " + num1 + ", num2 + " + num2);
+			
+			//Calculate GCD
+			//Show the first step in chain before the loop
+			String first = "GCD (" + num1 + "," + num2 + ")"; //print each GCD on it's own line
+			System.out.println("\n" + first);
+			
+				//Split each GCD to new lines.
+				//Decide how many spaces needed before the print out and loop over every string in loop, then increase.
+				String spaces = "";
+				for (int i = 0; i < first.length(); i++)
+					spaces += " ";
+				
+				//Length of chain starts at 1
+				int length = 1;
+			
+			//Loop to calculate the gcd
+			//While the 2 nums are not equal
+			//if num1 > numb2, then gcd(num1, num2) = gcd(num1-num2, num2) and
+			//if num1 < numb2, then gcd(num1, num2) = gcd(num1, num2-num1)
+			
+			//Set condition to continue while the two numbers !=
+			while (num1 != num2){
+				if (num1 > num2)
+					num1 = num1 - num2;
+				else
+					num2 = num2 - num1;
+				
+			}//end while loop
+			
+			//Print out next part of the chain. If complete, end loop. If not, continue.
+			System.out.println(" = GCD (" + num1 + ", " + num2 + ")" );
+			length++;
+			
+			//Display final result
+			System.out.println(" = " + num1);
+			System.out.println("\nIt took " + length + " steps to calcualte the GCD.");
+			
+			//Prompt user if they want to run the program again
+			System.out.println("Would you like to find another GCD (y/n)");
+			again = scan.next();
+			
+			//Validate the input of running program again
+			while (!again.equalsIgnoreCase("Y") && !again.equalsIgnoreCase("N")){
+				
+				System.out.println("Please enter either Y or N to continue: ");
+				again = scan.next();
+			
+			}//end rerun while
+		
+		//end do statement	
+		} while (again.equalsIgnoreCase("y")); //end do while loop. Ignore case only matching character. Use semicolon here!
+		
+		//Outro message
+		System.out.println("\nThank you for using the program.\n");
+		
+	}//end method
+}//end class
