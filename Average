@@ -1,0 +1,36 @@
+//Step 1: Set up scanner input
+import java.util.Scanner;
+
+public class Average{
+	public static void main(String[] args){
+		
+		//Step 2: Declaring Variables
+		//declare 3 constants: one for each test grade
+		double test1, test2, test3;
+		
+		//declare the constants variable for total number of tests
+		final double NUM_TESTS = 3;
+		
+		//declare variable to hold the average
+		double average;
+		
+		//Step 3: Getting the Input
+		//Prompt user for input
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the score on the first test: ");
+		test1 = scan.nextInt(); //read in the next integer (since test1 is an int) and store it in test1
+		System.out.println("Enter the score on the second test: ");
+		test2 = scan.nextInt(); 
+		System.out.println("Enter the score on the third test: ");
+		test3 = scan.nextInt(); 
+		
+		//Step 4: Calculate the Average
+		average = (test1 + test2 + test3) / (double)NUM_TESTS;
+	
+		//Step 5: Display Results
+		System.out.println("The averge score of your 3 tests is: " + average);
+	
+	}//end of method
+	
+	
+}//end of class
