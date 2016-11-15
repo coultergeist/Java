@@ -1,0 +1,34 @@
+//import java scanner
+import java.util.Scanner;
+
+//begin class
+public class Reverse{
+	
+	//begin main method
+	public static void main(String args[]) {
+		
+		//Intro message
+		System.out.println("The program will reverse your inputs!");
+		
+		//Display prompt
+	    System.out.println("\nPlease enter a string:");
+	    
+	    //Declare Scanner
+	    Scanner in = new Scanner(System.in);
+	    
+	    //Read user input
+	    String str = in.nextLine(); //declare string
+	    System.out.println("\nYou enterd: " + str);
+	    
+	    //Use For loop to perform the reverse function
+	    String reverse= " ";
+	    int len = str.length(); //declare variable
+	    for (int i = len-1; i >= 0; i--){
+	        reverse = reverse + str.charAt(i);
+	    }//end loop
+	    
+	    //Display result
+	    System.out.println("Your string in reverse is: " + reverse);
+
+	}//end main method
+}//end class
