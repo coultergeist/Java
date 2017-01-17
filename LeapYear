@@ -1,0 +1,94 @@
+/*
+Homework 3: Write a program that prompts the uses for two integers, one for month
+(between 1 and 12 inclusively), prints the number of days in that month, and takes into
+account of Leap Years.
+*/
+
+//import java utilities
+import java.util.Scanner;
+
+//begin class
+public class H3_danielle {
+	
+	//begin class
+	public static void main(String[] args){
+			
+		//Declaring Variables
+		int month, year;
+		
+		//java scanner
+		Scanner scan = new Scanner(System.in);
+		
+		//Display greeting message
+		System.out.println("I can tell you how many days are in any month! " );
+		
+		//Prompt user for input
+		//Instance 1: prompt user for 2 digit month
+		System.out.println("\nFirst, using 2 digits between 01-12, enter any month you're interested in! (For example, for March use 02) ");
+		month = scan.nextInt();
+		
+		//Instance 2: prompt user for 2 digit year
+		System.out.println("Seconldy, enter the year, up to year 2018! (For example, for 1994 use 94)");
+		year = scan.nextInt();
+				
+		//set conditions		
+			switch(month){
+			case 1:
+				System.out.println("\nGot it! You chose January of " + year + ", which has 31 days.");
+				break;
+				
+			case 2:
+				int n=28;
+			    if(year%4==0 && (year%100!=0 || year%400==0))
+			        n++;
+				System.out.println("\nGot it! You chose February of " + year + ", which has " +n+ " days.");
+				break;
+				
+			case 3:
+				System.out.println("\nGot it! You chose March of " + year + ", which has 31 days.");
+				break;
+				
+			case 4:
+				System.out.println("\nGot it! You chose the month April of " + year + ", which has 30 days.");
+				break;
+				
+			case 5:
+				System.out.println("\nGot it! You chose the month May of " + year + ", which has 31 days.");
+				break;
+				
+			case 6:
+				System.out.println("\nGot it! You chose the month June of " + year + ", which has 30 days.");
+				break;
+				
+			case 7:
+				System.out.println("\nGot it! You chose the month July of " + year + ", which has 31 days.");
+				break;
+				
+			case 8:
+				System.out.println("\nGot it! You chose the month August of " + year + ", which has 31 days.");
+				break;
+				
+			case 9:
+				System.out.println("\nGot it! You chose the month September of " + year + ", which has 30 days.");
+				break;
+				
+			case 10:
+				System.out.println("\nGot it! You chose the month October of " + year + ", which has 31 days.");
+				break;
+				
+			case 11:
+				System.out.println("\nGot it! You chose the month November of " + year + ", which has 30 days.");
+				break;
+				
+			case 12:
+				System.out.println("\nGot it! You chose the month December of " + year + ", which has 31 days.");
+				break;
+			
+			default:
+				System.out.println();			
+		
+			}//end switch statement
+		     
+	
+	}//end method
+}//end class
